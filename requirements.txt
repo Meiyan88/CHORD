@@ -1,0 +1,39 @@
+# CHORD dependencies
+# Python 3.10 is the validated interpreter.
+#
+# torch-scatter and torch-sparse need wheels compiled for the exact torch
+# build, and torch-sparse imports torch_scatter at runtime.  Install them
+# separately before this file (see README):
+#   CPU:  pip install torch-scatter==2.1.2 torch-sparse==0.6.18 \
+#             -f https://data.pyg.org/whl/torch-2.0.1+cpu.html
+#   CUDA: pip install torch-scatter==2.1.2 torch-sparse==0.6.18 \
+#             -f https://data.pyg.org/whl/torch-2.0.1+cu117.html
+#
+# dassl's setup.py imports numpy without declaring it as a build dependency.
+# Install numpy first and use --no-build-isolation for this file (see README).
+
+torch==2.0.1
+torchvision==0.15.2
+
+transformers==4.28.1
+tokenizers==0.13.3
+huggingface-hub==0.33.4
+safetensors==0.5.3
+
+monai==1.3.0
+pycox==0.3.0
+torchtuples==0.2.2
+
+numpy==1.26.4
+pandas==2.3.1
+scipy==1.13.1
+scikit-learn==1.4.0
+openpyxl==3.1.5
+
+lifelines==0.30.0
+einops==0.8.1
+nibabel==5.3.2
+SimpleITK==2.5.2
+yacs==0.1.8
+
+dassl @ git+https://github.com/KaiyangZhou/Dassl.pytorch.git@c61a1b570ac6333bd50fb5ae06aea59002fb20bb
